@@ -1,1 +1,51 @@
-aaaa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  circle {
+    stroke: white;
+    stroke-width: 2pt;
+    fill-opacity: 0.8;
+  }
+  circle.small {
+    fill: red;
+  }
+  circle.medium {
+    fill: green;
+  }
+  circle.large {
+    fill: blue;
+  }/*# sourceMappingURL=style.css.map */
+  </style>
+</head>
+<body>
+  <h1>example</h1>
+  <div id="circles"></div>
+</body>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+const circles = [
+  { type: 'small', r: 50, x: 100, y: 150 },
+  { type: 'medium', r: 100, x: 200, y: 150 },
+  { type: 'large', r: 150, x: 300, y: 150 }  
+]
+const svg = d3.select('#circles')
+  .append('svg')
+  .attr('width', 500)
+  .attr('height', 500)
+svg.selectAll('circles')
+  .data(circles)
+  .enter()
+  .append('circle')
+  .attr('r', d => d.r)
+  .attr('cx', d => d.x)
+  .attr('cy', d => d.y)
+  .attr('class', d => d.type)
+
+</script>
+</html>
+

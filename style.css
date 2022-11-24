@@ -1,0 +1,14 @@
+circle {
+  stroke: white;
+  stroke-width: 2pt;
+  fill-opacity: 0.8;
+}
+circle.small {
+  fill: red;
+}
+circle.medium {
+  fill: green;
+}
+circle.large {
+  fill: blue;
+}/*# sourceMappingURL=style.css.map */
